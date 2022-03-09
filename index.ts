@@ -1,13 +1,14 @@
 import { Reader } from "./reader";
-import { Trade } from "./types";
+import { Trade, Market, MarketMetrics } from "./types";
+import { getMarkets } from "./extract";
 
-let trades: Array<Trade> = new Reader().parseTradeData()
+let trades: Array<Trade> = new Reader().parseTradeData();
 
-console.log(trades)
+let markets: Array<Market> = getMarkets(trades);
+
+//console.log(trades)
+
+console.log(markets);
 
 
-const getMarkets = (trades: Array<Trade>) => {
-
-}
-
-
+let marketMetrics: Array<MarketMetrics> = [] 

@@ -2,6 +2,7 @@ import { Trade } from "./types";
 let fs = require("fs");
 
 export class Reader {
+
     parseTradeData(): Array<Trade> {
         var trades: Array<string> = [];
 
