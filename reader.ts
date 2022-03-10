@@ -2,7 +2,6 @@ import { Trade } from "./types";
 let fs = require("fs");
 
 export class Reader {
-
     parseTradeData(): Array<Trade> {
         var trades: Array<string> = [];
 
@@ -13,13 +12,13 @@ export class Reader {
 
         let filename = process.argv[2];
         trades = fs.readFileSync(filename).toString("utf-8").split("\n");
-        return this.structureTradeData(trades)
+        return this.structureTradeData(trades);
     }
 
     private structureTradeData(trades: Array<string>): Array<Trade> {
         let structuredTrades: Array<Trade> = [];
         trades.forEach((trade: string) => {
-            if (trade !== "BEGIN" && trade !== "END") {
+            if (trade[0] === "{") {
                 const curr = JSON.parse(trade);
                 const currTrade: Trade = {
                     id: curr.id,
