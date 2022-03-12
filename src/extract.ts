@@ -33,7 +33,7 @@ export function getMarketMetrics(markets: Array<Market>): Array<MarketMetrics> {
 
     for (let market of markets) {
         let marketMetric: MarketMetrics;
-        let totalVolume: number = 0,
+        let totalVolume = 0,
             meanPrice = 0,
             meanVolume = 0,
             vwap = 0,

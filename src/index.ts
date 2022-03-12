@@ -30,6 +30,7 @@ let markets: Array<Market> = getMarkets(trades);
 
 let marketMetrics: Array<MarketMetrics> = getMarketMetrics(markets);
 
+console.log("PRINTING MARKET METRICS")
 for (let m of marketMetrics) {
     console.log(
         "market:",
